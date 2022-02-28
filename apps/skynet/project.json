@@ -1,0 +1,39 @@
+{
+  "root": "apps/skynet",
+  "sourceRoot": "apps/skynet/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/skynet",
+        "main": "apps/skynet/src/index.ts",
+        "tsConfig": "apps/skynet/tsconfig.app.json",
+        "assets": ["apps/skynet/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "skynet:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/skynet/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/skynet"],
+      "options": {
+        "jestConfig": "apps/skynet/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
