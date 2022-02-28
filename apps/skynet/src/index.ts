@@ -8,33 +8,6 @@ console.log(`Running ${skynet()}`);
 // Server will have a wallet and control uploading data
 // to a skynet link. The client will consume from that skynet
 // link
-//
-// Test if folders can be updated
-
-//    const skynetClient = new SkynetClient(
-//      core.getInput("portal-url"),
-//      prepareClientOptions()
-//    );
-//    const skylink = await skynetClient.uploadDirectory(
-//      core.getInput("upload-dir"),
-//      prepareUploadOptions()
-//    );
-//
-//    // generate base32 skylink url from base64 skylink
-//    const skylinkUrl = await skynetClient.getSkylinkUrl(skylink, {
-//      subdomain: true,
-//    });
-//
-//        const { publicKey, privateKey } = genKeyPairFromSeed(seed);
-//
-//        const [entryUrl, resolverSkylink] = await Promise.all([
-//          skynetClient.registry.getEntryUrl(publicKey, dataKey),
-//          skynetClient.registry.getEntryLink(publicKey, dataKey),
-//          skynetClient.db.setDataLink(privateKey, dataKey, skylink),
-//        ]);
-//        const resolverUrl = await skynetClient.getSkylinkUrl(resolverSkylink, {
-//          subdomain: true,
-//        });
 
 const seed = process.env['SEED'];
 const dataKey = process.env['DATAKEY'];
